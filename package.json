@@ -1,0 +1,16 @@
+{
+  "name": "rumba",
+  "version": "1.0.0",
+  "description": "Rumba - Node.js framework",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergey-shpak/rumba.git"
+  },
+  "homepage": "https://sergey-shpak.github.io/rumba/",
+  "author": "Sergey Shpak <sergey.shpak.web@gmail.com>",
+  "license": "MIT"
+}

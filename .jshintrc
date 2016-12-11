@@ -1,0 +1,21 @@
+{
+  // http://jshint.com/docs/
+  "node"          : true,
+  "strict"        : true,
+  "esversion"     : 5,
+  "freeze"        : true,
+  "undef"         : true,
+  "unused"        : true,
+  "evil"          : true,
+  "maxerr"        : 10,
+  "expr"          : true,
+  "globals"   : {
+    // Mocha setup
+    "describe"   : false,
+    "it"         : false,
+    "before"     : false,
+    "beforeEach" : false,
+    "after"      : false,
+    "afterEach"  : false
+  }
+}

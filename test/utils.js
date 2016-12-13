@@ -16,13 +16,13 @@ describe('Utils.', function(){
 		it('should be defined as function',function(){
 
 			expect(utils,'Constructor is not defined')
-			.to.have.property('constructor')
+			.to.have.property('constructor');
 		});
 
 		it('should have name property', function() {
 
 			expect(utils.constructor,'Constructor\'s name is not \'Utils\'')
-			.to.have.property('name','Utils')
+			.to.have.property('name','Utils');
 		});
 	});
 
@@ -37,13 +37,13 @@ describe('Utils.', function(){
 		it('should return new instance of Utils',function() {
 
 			expect(utils, 'Is not an instance of Utils')
-			.to.be.deep.equal(Object.getPrototypeOf(utils.extend({})))
+			.to.be.deep.equal(Object.getPrototypeOf(utils.extend({})));
 		});
 
 		it('should assign passed properties to new instance',function() {
 
 			expect(utils.extend({prop:'value'}),'Properties are not assigned')
-			.to.have.property('prop').that.is.equal('value')
+			.to.have.property('prop').that.is.equal('value');
 		});
 	});
 
@@ -57,7 +57,13 @@ describe('Utils.', function(){
 
 		it('should call passed \'constructor\' method', function(done){
 
-			utils.create({constructor:function Name() {done();}});
+			utils.create({constructor:function Name() {
+
+				expect(arguments, 'constructor options are not passed')
+				.to.have.property('length').that.is.equal(2);
+
+				done();
+			}}, 'option1', 'option2');
 		});
 
 		it('should return passed constructor\'s return value', function() {
@@ -65,7 +71,7 @@ describe('Utils.', function(){
 			expect(utils.create({
 				constructor:function Name() {return 'uniqReturnValue';}}
 			), 'Does not return constructor value')
-			.to.equal('uniqReturnValue')
+			.to.equal('uniqReturnValue');
 		});
 
 		it('should return new Instance of Utils if passed constructor method returns undefined', function() {
@@ -73,13 +79,13 @@ describe('Utils.', function(){
 			expect(utils, 'Is not an instance of Utils')
 			.to.be.deep.equal(Object.getPrototypeOf(utils.create({constructor:function Name() {
 				return undefined;
-			}})))
-		})
+			}})));
+		});
 
 		it('should return new instance of Utils if constructor method is not passed', function(){
 
 			expect(utils, 'Is not instance of Utils')
-			.to.be.deep.equal(Object.getPrototypeOf(utils.create({})))
+			.to.be.deep.equal(Object.getPrototypeOf(utils.create({})));
 		});
 	});
 

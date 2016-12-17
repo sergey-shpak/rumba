@@ -16,13 +16,13 @@ describe('Utils.', function(){
 		it('should be defined as function',function(){
 
 			expect(utils,'Constructor is not defined')
-			.to.have.property('constructor');
+			.to.have.property('constructor').that.is.a('function');
 		});
 
 		it('should have name property', function() {
 
 			expect(utils.constructor,'Constructor\'s name is not \'Utils\'')
-			.to.have.property('name','Utils');
+			.to.have.property('name').that.is.equal('Utils');
 		});
 	});
 
